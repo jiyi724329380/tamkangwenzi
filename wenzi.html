@@ -27,14 +27,14 @@
     </a-image>
 
     <a-entity position="-4 0 -6"
-              geometry="primitive: plane; width: .375; height: 3"
-              material="shader: flat; src:url(signwhite.png); opacity: 1.0; side: double; transparent: true"
+              geometry="primitive: plane; width: 3; height: 1.5"
+              material="shader: flat; src:url(stagesight.png); opacity: 1.0; side: double; transparent: true"
               look-at="[camera]" id="signwhite" visible ="false">
 
     </a-entity>
     <a-entity position="4 0 5"
-              geometry="primitive: plane; width: .375; height: 3"
-              material="shader: flat; src: url(signblue.png); opacity: 1.0; side: double; transparent: true"
+              geometry="primitive: plane; width: 3; height: 1.5"
+              material="shader: flat; src: url(audience.png); opacity: 1.0; side: double; transparent: true"
               look-at="[camera]" id="signblue" visible ="false">
 
     </a-entity>
@@ -45,14 +45,14 @@
 
     </a-entity>
     <a-entity position="4 0 5"
-              geometry="primitive: plane; width: .375; height: 3"
+              geometry="primitive: plane; width: 2.5; height: 1"
               material="shader: flat; src: url(-/exit.png); opacity: 1.0; side: double; transparent: true"
               look-at="[camera]" id="exit" visible ="false">
 
     </a-entity>
 
     <a-entity position="4 0 5"
-              geometry="primitive: plane; width: 2; height: 0.75"
+              geometry="primitive: plane; width: 1.75; height: .5"
               material="shader: flat; src: url(-/intro.png); opacity: 1.0; side: double; transparent: true"
               look-at="[camera]" id="intro" visible ="false">
 
@@ -97,6 +97,7 @@
 
 
 
+
     });
 
     alter.addEventListener('click',function(){
@@ -105,6 +106,8 @@
         back.setAttribute('position','-3  -2 -10');
         alter.setAttribute('visible','false');
         intro.setAttribute('visible','false');
+        exit.setAttribute('visible','true');
+        exit.setAttribute('position','-10  -1 2.5');
 
 
 
@@ -120,6 +123,16 @@
         wenzi.setAttribute('visible','true');
         back.setAttribute('visible','false');
         intro.setAttribute('visible','true');
+        exit.setAttribute('visible','false');
+
+
+    });
+    exit.addEventListener('click',function(){
+        sky.setAttribute('src','outside1.jpg');
+        enter.setAttribute('visible','true');
+        wenzi.setAttribute('visible','false');
+        back.setAttribute('visible','false');
+        exit.setAttribute('visible','false');
 
 
     });
